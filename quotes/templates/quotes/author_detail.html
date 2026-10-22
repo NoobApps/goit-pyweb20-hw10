@@ -1,0 +1,12 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+<h2>{{ author.fullname }}</h2>
+<p><strong>Дата народження:</strong> {{ author.born_date|default:"Не вказано" }}</p>
+<p><strong>Місце народження:</strong> {{ author.born_location|default:"Не вказано" }}</p>
+<hr>
+<h3>Біографія</h3>
+<p style="line-height: 1.6;">{{ author.description|default:"Опис відсутній." }}</p>
+<hr>
+<p><a href="{% url 'home' %}?author={{ author.id }}">Переглянути всі цитати цього автора</a></p>
+{% endblock %}
