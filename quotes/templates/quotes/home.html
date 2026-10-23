@@ -38,11 +38,11 @@
 
                     {% if quote.tags %}
                         <div class="mt-2">
-                            {% for tag in quote.tags.split %}
-                                <a href="?tag={{ tag }}" class="badge bg-light text-dark border text-decoration-none me-1">
-                                    #{{ tag }}
-                                </a>
-                            {% endfor %}
+                            {% for tag in quote.tags|split_by_comma %}
+            <a href="?tag={{ tag }}" class="badge bg-light text-dark border text-decoration-none me-1 mb-1">
+                #{{ tag }}
+            </a>
+        {% endfor %}
                         </div>
                     {% endif %}
                 </div>
