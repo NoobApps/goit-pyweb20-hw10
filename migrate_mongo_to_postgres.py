@@ -57,6 +57,7 @@ def run_migration():
                 print(f"Додано цитату: {quote_text[:30]}...")
 
     print("Міграцію успішно завершено!")
+    mongo_client.close()
 
 if __name__ == "__main__":
     run_migration()
